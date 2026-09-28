@@ -1,0 +1,161 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+        --background: 36 33% 96%;
+        --foreground: 26 43% 9%;
+        --card: 0 0% 100%;
+        --card-foreground: 26 43% 9%;
+        --popover: 36 33% 97%;
+        --popover-foreground: 26 43% 9%;
+        --primary: 26 46% 13%;
+        --primary-foreground: 36 40% 94%;
+        --secondary: 34 30% 92%;
+        --secondary-foreground: 26 43% 12%;
+        --muted: 34 25% 92%;
+        --muted-foreground: 25 14% 38%;
+        --accent: 29 60% 49%;
+        --accent-foreground: 36 40% 96%;
+        --destructive: 0 72% 45%;
+        --destructive-foreground: 36 40% 96%;
+        --border: 32 20% 86%;
+        --input: 32 20% 86%;
+        --ring: 29 60% 49%;
+        --chart-1: 29 60% 49%;
+        --chart-2: 26 46% 20%;
+        --chart-3: 34 40% 70%;
+        --chart-4: 24 30% 35%;
+        --chart-5: 36 33% 60%;
+        --radius: 0.75rem;
+    }
+    .dark {
+        --background: 26 43% 7%;
+        --foreground: 36 40% 94%;
+        --card: 25 40% 10%;
+        --card-foreground: 36 40% 94%;
+        --popover: 25 40% 10%;
+        --popover-foreground: 36 40% 94%;
+        --primary: 36 40% 94%;
+        --primary-foreground: 26 43% 9%;
+        --secondary: 25 30% 16%;
+        --secondary-foreground: 36 40% 94%;
+        --muted: 25 30% 16%;
+        --muted-foreground: 32 18% 65%;
+        --accent: 29 60% 49%;
+        --accent-foreground: 26 43% 9%;
+        --destructive: 0 62.8% 30.6%;
+        --destructive-foreground: 36 40% 94%;
+        --border: 25 25% 18%;
+        --input: 25 25% 18%;
+        --ring: 29 60% 49%;
+        --chart-1: 29 60% 49%;
+        --chart-2: 36 40% 80%;
+        --chart-3: 26 30% 40%;
+        --chart-4: 34 30% 60%;
+        --chart-5: 24 40% 30%;
+    }
+}
+
+@layer base {
+    * {
+        @apply border-border;
+    }
+    html {
+        scroll-behavior: auto;
+    }
+    body {
+        @apply bg-parchment text-coffee-900;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+    ::selection {
+        background: #c87d32;
+        color: #fbf8f3;
+    }
+    ::-webkit-scrollbar {
+        width: 10px;
+    }
+    ::-webkit-scrollbar-track {
+        background: #f5efe4;
+    }
+    ::-webkit-scrollbar-thumb {
+        background: #c9a97f;
+        border-radius: 8px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+        background: #c87d32;
+    }
+    body::before {
+        content: "";
+        position: fixed;
+        inset: 0;
+        z-index: 30;
+        pointer-events: none;
+        opacity: 0.045;
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    }
+}
+
+@layer base {
+    [data-debug-wrapper="true"] {
+        display: contents !important;
+    }
+
+    [data-debug-wrapper="true"] > * {
+        margin-left: inherit;
+        margin-right: inherit;
+        margin-top: inherit;
+        margin-bottom: inherit;
+        padding-left: inherit;
+        padding-right: inherit;
+        padding-top: inherit;
+        padding-bottom: inherit;
+        column-gap: inherit;
+        row-gap: inherit;
+        gap: inherit;
+        border-left-width: inherit;
+        border-right-width: inherit;
+        border-top-width: inherit;
+        border-bottom-width: inherit;
+        border-left-style: inherit;
+        border-right-style: inherit;
+        border-top-style: inherit;
+        border-bottom-style: inherit;
+        border-left-color: inherit;
+        border-right-color: inherit;
+        border-top-color: inherit;
+        border-bottom-color: inherit;
+    }
+}
+
+@keyframes marquee {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+.marquee-track {
+    animation: marquee 36s linear infinite;
+}
+
+.marquee-track:hover {
+    animation-play-state: paused;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
+.no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.scale-108 {
+    transform: scale(1.08);
+}
